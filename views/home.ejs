@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta
+	name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"
+	/>
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<link href="img/logo/logo.jpg" rel="icon" />
+	<title>DanzFyz - Dashboard</title>
+	<link
+	href="vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet"
+	type="text/css"
+	/>
+	<link
+	href="vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet"
+	type="text/css"
+	/>
+	<link href="css/ruang-admin.min.css" rel="stylesheet" />
+	<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+	/>
+</head>
+
+<body id="page-top" class="">
+	<div id="wrapper">
+		<!-- Sidebar -->
+		<ul
+		class="navbar-nav sidebar sidebar-light accordion"
+		id="accordionSidebar"
+		>
+		<a
+		class="sidebar-brand d-flex align-items-center justify-content-center"
+		href="index.html"
+		>
+		<div class="sidebar-brand-text mx-3">API MENU</div>
+	</a>
+	<hr class="sidebar-divider my-0" />
+	<li class="nav-item active">
+		<a class="nav-link" href="index.html">
+			<i class="fa-solid fa-house"></i>
+			<span>Dashboard</span></a
+			>
+		</li>
+		<hr class="sidebar-divider" />
+		<div class="sidebar-heading">Payment Gateway</div>
+		<li class="nav-item">
+			<a class="nav-link" href="/orderkuota">
+				<i class="fa-solid fa-money-bill"></i>
+				<span>Orderkuota</span>
+			</a>
+		</li>
+		<hr class="sidebar-divider" />
+		<div class="sidebar-heading">Hosting</div>
+		<li class="nav-item">
+			<a class="nav-link" href="#">
+				<i class="fa-solid fa-server"></i>
+				<span>Addpackage</span>
+			</a>
+		</li>
+	</ul>
+	<!-- Sidebar -->
+	<div id="content-wrapper" class="d-flex flex-column">
+		<div id="content">
+			<!-- TopBar -->
+			<nav
+			class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top"
+			>
+			<button
+			id="sidebarToggleTop"
+			class="btn btn-link rounded-circle mr-3"
+			>
+			<i class="fa fa-bars"></i>
+		</button>
+		<ul class="navbar-nav ml-auto">
+			<div class="topbar-divider d-none d-sm-block"></div>
+			<li class="nav-item dropdown no-arrow">
+				<a
+				class="nav-link dropdown-toggle"
+				href="#"
+				id="userDropdown"
+				role="button"
+				data-toggle="dropdown"
+				aria-haspopup="true"
+				aria-expanded="false"
+				>
+				<img
+				class="img-profile rounded-circle"
+				src="img/boy.png"
+				style="max-width: 60px"
+				/>
+				<span class="ml-2 d-none d-lg-inline text-white small"
+				><%= user.username %></span
+				>
+			</a>
+			<div
+			class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+			aria-labelledby="userDropdown"
+			>
+			<a
+			class="dropdown-item"
+			href="/logout"
+			data-toggle="modal"
+			data-target="#logoutModal"
+			>
+			<i
+			class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"
+			></i>
+			Logout
+		</a>
+	</div>
+</li>
+</ul>
+</nav>
+<!-- Topbar -->
+
+<!-- Container Fluid-->
+<div class="container-fluid" id="container-wrapper">
+	<div
+	class="d-sm-flex align-items-center justify-content-between mb-4"
+	>
+	<h1 class="h3 mb-0 text-gray-900">API DASHBOARD</h1>
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="./">Home</a></li>
+		<li class="breadcrumb-item active" aria-current="page">
+			Dashboard
+		</li>
+	</ol>
+</div>
+
+<div class="row mb-3">
+	<!-- Earnings (Monthly) Card Example -->
+	<div class="col-xl-4 col-md-6 mb-4">
+		<div class="card shadow-sm border-left-primary h-100">
+			<div class="card-body">
+				<div class="row align-items-center">
+					<div class="col">
+						<h5 class="text-primary font-weight-bold mb-3">INFORMASI AKUN</h5>
+						<h6 class="text-dark">Selamat Datang, <strong><%= user.username %></strong>!</h6>
+						<p class="text-muted mb-1">Tipe Akun: <strong class="text-dark"><%= user.type %></strong></p>
+						<p class="text-muted mb-0">Sisa Masa Aktif: <strong class="text-dark"><%= user.active %> hari</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- jdjodo -->
+<div class="col-xl-3 col-md-6 mb-4">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row align-items-center">
+				<div class="col mr-2">
+					<div
+					class="text-xs font-weight-bold text-gray-900 mb-1"
+					>
+					TOTAL VISITORS
+				</div>
+				<div class="h5 mb-0 font-weight-bold text-uppercase">
+					<%= visitors %>
+				</div>
+				<div class="mt-2 mb-0 text-muted text-xs">
+					<span class="text-success mr-2"
+					><i class="fa-solid fa-circle-up"></i> one
+					Monthly</span
+					>
+				</div>
+			</div>
+			<div class="col-auto">
+				<lord-icon
+				src="https://cdn.lordicon.com/kdduutaw.json"
+				trigger="hover"
+				colors="primary:#121331,secondary:#545454"
+				style="width: 80px; height: 80px"
+				>
+			</lord-icon>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- Earnings (Annual) Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+					<div
+					class="text-xs font-weight-bold text-gray-900 mb-1"
+					>
+					IP ADDRESS
+				</div>
+				<div
+				class="h5 mb-0 font-weight-bold text-uppercase"
+				id="ip-address"
+				></div>
+				<div class="mt-2 mb-0 text-muted text-xs">
+					<span class="text-primary mr-2"
+					><i class="fa-solid fa-circle-up"></i
+					></span>
+				</div>
+			</div>
+			<div class="col-auto">
+				<lord-icon
+				src="https://cdn.lordicon.com/vbmtnozn.json"
+				trigger="loop"
+				delay="2000"
+				colors="primary:#121331,secondary:#545454"
+				style="width: 80px; height: 80px"
+				>
+			</lord-icon>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- New User Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+					<div
+					class="text-xs font-weight-bold text-gray-900 mb-1"
+					>
+					APIKEY
+				</div>
+				<div
+				class="h6 mb-0 mr-3 font-weight-bold text-uppercase"
+				>
+				<%= user.apikey %>
+			</div>
+			<div class="mt-2 mb-0 text-muted text-xs">
+				<span class="text-warning mr-2"
+				><i class="fa-solid fa-circle-up"></i
+				></span>
+			</div>
+		</div>
+		<lord-icon
+		src="https://cdn.lordicon.com/xqdfobxg.json"
+		trigger="hover"
+		colors="primary:#121331,secondary:#545454"
+		style="width:80px;height:80px">
+	</lord-icon>
+</div>
+</div>
+</div>
+</div>
+<!-- New User Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+					<div
+					class="text-xs font-weight-bold text-gray-900 mb-1"
+					>
+					TOTALREQUEST
+				</div>
+				<div
+				class="h6 mb-0 mr-3 font-weight-bold text-uppercase"
+				>
+				<%= totalrequest  %> / <%= maxrequest  %>
+			</div>
+			<div class="mt-2 mb-0 text-muted text-xs">
+				<span class="text-secondary mr-2"
+				><i class="fa-solid fa-circle-up"></i
+				></span>
+			</div>
+		</div>
+		<lord-icon
+		src="https://cdn.lordicon.com/gvtjlyjf.json"
+		trigger="hover"
+		colors="primary:#121331,secondary:#545454"
+		style="width:80px;height:80px">
+	</lord-icon>
+</div>
+</div>
+</div>
+</div>
+<!-- Pending Requests Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+	<div class="card h-100">
+		<div class="card-body">
+			<div class="row no-gutters align-items-center">
+				<div class="col mr-2">
+					<div
+					class="text-xs font-weight-bold text-gray-900 mb-1"
+					>
+					WAKTU
+				</div>
+				<div
+				class="h5 mb-0 font-weight-bold text-uppercase"
+				id="clock"
+				>
+				00:00:00
+			</div>
+			<div class="mt-2 mb-0 text-muted text-xs">
+				<span class="text-danger mr-2"
+				><i class="fa-solid fa-circle-up"></i
+				></span>
+			</div>
+		</div>
+		<div class="col-auto">
+			<lord-icon
+			src="https://cdn.lordicon.com/warimioc.json"
+			trigger="hover"
+			colors="primary:#121331,secondary:#545454"
+			style="width: 80px; height: 80px"
+			>
+		</lord-icon>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- tambahkan code di atas ini -->
+</div>
+<!--Row-->
+<div class="row">
+	<div class="col-lg-6">
+		<div class="card mb-4">
+			<div
+			class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+			>
+			<h6 class="m-0 font-weight-bold text-info">
+				<i class="fa-solid fa-key"></i> Check Apikey
+			</h6>
+		</div>
+		<div class="card-body">
+			<div class="form-group">
+				<input
+				type="text"
+				class="form-control"
+				id="apikey-input"
+				placeholder="Masukan Apikey Mu Di Sini"
+				/>
+			</div>
+			<button type="submit" class="btn btn-info" onclick="redirectToCheck()">Check</button>
+		</div>
+	</div>
+</div>
+</div>
+<!-- Modal Logout -->
+<div
+class="modal fade"
+id="logoutModal"
+tabindex="-1"
+role="dialog"
+aria-labelledby="exampleModalLabelLogout"
+aria-hidden="true"
+>
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabelLogout">
+				Ohh No!
+			</h5>
+			<button
+			type="button"
+			class="close"
+			data-dismiss="modal"
+			aria-label="Close"
+			>
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<p>Are you sure you want to logout?</p>
+	</div>
+	<div class="modal-footer">
+		<button
+		type="button"
+		class="btn btn-outline-primary"
+		data-dismiss="modal"
+		>
+		Cancel
+	</button>
+	<a href="/logout" class="btn btn-primary">Logout</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!---Container Fluid-->
+</div>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+	<div class="container my-auto">
+		<div class="copyright text-center my-auto">
+			<span
+			>copyright &copy;
+			<script>
+				document.write(new Date().getFullYear());
+			</script>
+			- developed by
+			<b><a href="#" target="_blank">DanzFyz</a></b>
+		</span>
+	</div>
+</div>
+</footer>
+<!-- Footer -->
+</div>
+</div>
+
+<!-- Scroll to top -->
+<a class="scroll-to-top rounded" href="#page-top">
+	<i class="fas fa-angle-up"></i>
+</a>
+
+<script>
+	fetch("https://api.ipify.org?format=json")
+	.then((response) => response.json())
+	.then((data) => {
+		document.getElementById("ip-address").textContent = data.ip;
+	})
+	.catch((error) => {
+		document.getElementById("ip-address").textContent =
+		"Gagal mengambil IP.";
+		console.error("Error:", error);
+	});
+
+	function updateClock() {
+		const now = new Date();
+		const options = {
+			timeZone: "Asia/Jakarta",
+			hour: "2-digit",
+			minute: "2-digit",
+			second: "2-digit",
+          hour12: false, // Gunakan format 24 jam
+        };
+        const time = now.toLocaleTimeString("id-ID", options);
+        document.getElementById("clock").textContent = time;
+      }
+
+      // Perbarui jam setiap detik
+      setInterval(updateClock, 1000);
+      updateClock(); // Tampilkan jam segera saat halaman dimuat
+    </script>
+
+    <script>
+    	function redirectToCheck() {
+    		const apikey = document.getElementById('apikey-input').value;
+    		if (!apikey) {
+    			alert("API Key tidak boleh kosong!");
+    			return;
+    		}
+        window.open(`/check-apikey?apikey=${apikey}`, '_blank'); // Buka di tab baru
+      }
+    </script>
+
+
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/ruang-admin.min.js"></script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+  </body>
+  </html>
